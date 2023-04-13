@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { v4 as uuid } from "uuid";
 import { DataGrid } from "@mui/x-data-grid";
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import CallToActionBlock from "../../components/CallToActionBlock";
 import Header from "../../components/Header";
 import styles from "../../styles/Products.module.css";
@@ -71,6 +71,7 @@ const Products = () => {
   const [product, setProduct] = useState(products);
   const [tempProduct, setTempProduct] = useState(null);
   const [edit, setEdit] = useState(false);
+  const [searchText, setSearchText] = useState("");
 
   // Create a product
   const handleCreateProduct = (e) => {
@@ -107,6 +108,18 @@ const Products = () => {
     setEdit(false);
   };
 
+  // Filter data table based on the search keyword
+  const handleSearch = (searchValue) => {
+    const searchRegex = new RegExp(`.*${searchValue}.*`, "ig");
+    setSearchText(searchValue);
+    const filteredRows = product.filter((row) => {
+      return Object.keys(row).some((item) => {
+        return searchRegex.test(row[item].toString());
+      });
+    });
+    setProduct(filteredRows);
+  };
+
   return (
     <>
       <Header />
@@ -123,7 +136,9 @@ const Products = () => {
               </Typography>
               <TextField
                 id="search"
+                name="search"
                 label="Search for keywords..."
+                onChange={(e) => handleSearch(e.target.value)}
                 variant="outlined"
                 fullWidth
               />
@@ -144,6 +159,12 @@ const Products = () => {
                     },
                     "& .MuiDataGrid-cell ": {
                       height: "100px",
+                    },
+                  }}
+                  slotProps={{
+                    toolbar: {
+                      value: searchText,
+                      onChange: (event) => handleSearch(event.target.value),
                     },
                   }}
                 />
@@ -196,6 +217,7 @@ const Products = () => {
                         variant="outlined"
                         fullWidth
                         value={tempProduct?.product}
+                        InputLabelProps={{ shrink: true }}
                         onChange={(e) => {
                           setEdit(true);
                           setTempProduct({
@@ -211,6 +233,7 @@ const Products = () => {
                         label="Price"
                         variant="outlined"
                         value={tempProduct?.price}
+                        InputLabelProps={{ shrink: true }}
                         onChange={(e) => {
                           setEdit(true);
                           setTempProduct({
