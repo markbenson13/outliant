@@ -1,0 +1,27 @@
+.banner-wrapper {
+  padding: 8rem 0;
+}
+
+.banner-content h1 {
+  font-weight: 700;
+  font-size: 60px;
+  margin-bottom: 2rem;
+}
+
+.banner-content p {
+  font-size: 18px;
+  padding-right: 4rem;
+  color: #636262;
+  line-height: 32px;
+  margin-bottom: 3rem;
+}
+
+.image-container {
+  position: relative;
+}
+
+.small-image {
+  position: absolute;
+  top: -70px;
+  right: 30px;
+}

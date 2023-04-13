@@ -1,0 +1,16 @@
+.search-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.search-form {
+  background-color: #ececec;
+  padding: 2rem 4rem;
+  text-align: center;
+}
+
+.product-table {
+  position: relative;
+}

@@ -1,0 +1,14 @@
+.cta-wrapper {
+  background-color: #ececec;
+  padding: 6rem 0;
+}
+
+.cta-content h2 {
+  font-weight: 700;
+  font-size: 54px;
+  margin-bottom: 2rem;
+}
+
+.cta-img {
+  margin-top: -11rem;
+}
