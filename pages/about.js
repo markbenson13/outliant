@@ -6,8 +6,8 @@ const About = () => {
   return (
     <>
       <Header />
-      <Container maxWidth="lg" disableGutters>
-        <Typography variant="h3" component="h1">
+      <Container maxWidth="lg">
+        <Typography variant="h3" component="h1" pt={16}>
           About
         </Typography>
       </Container>

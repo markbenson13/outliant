@@ -16,13 +16,9 @@ export default function Home() {
       </Head>
       <Header />
       <Banner />
-      <Container
-        maxWidth="lg"
-        disableGutters
-        className={styles["home-content"]}
-      >
+      <Container maxWidth="lg" className={styles["home-content"]}>
         <Grid container spacing={4} alignItems="stretch">
-          <Grid item xs={3}>
+          <Grid item md={3}>
             <Typography variant="h4" component="h2" mb={2}>
               Header Text
             </Typography>
@@ -38,14 +34,14 @@ export default function Home() {
               dolorem. Quas ipsa laboriosam neque maiores!
             </Typography>
           </Grid>
-          <Grid item xs={6}>
-            <Box sx={{ padding: "0 1rem" }}>
+          <Grid item xs={12} md={6}>
+            <Box sx={{ padding: { md: "0 1rem" } }}>
               <ImageBox width="100%" height="500px" bg="#c4c4c4" />
             </Box>
           </Grid>
           <Grid
             item
-            xs={3}
+            md={3}
             sx={{
               display: "flex",
               flexFlow: "column wrap",

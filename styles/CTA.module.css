@@ -12,3 +12,9 @@
 .cta-img {
   margin-top: -11rem;
 }
+
+@media only screen and (max-width: 900px) {
+  .cta-img {
+    margin-top: 0;
+  }
+}

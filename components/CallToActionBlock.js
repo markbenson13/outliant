@@ -6,7 +6,7 @@ import ImageBox from "../components/Image";
 const CallToActionBlock = () => {
   return (
     <Box className={styles["cta-wrapper"]}>
-      <Container maxWidth="lg" disableGutters>
+      <Container maxWidth="lg">
         <Grid
           container
           spacing={4}
@@ -14,12 +14,12 @@ const CallToActionBlock = () => {
           justifyContent="center"
           alignItems="center"
         >
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <Box className={styles["cta-img"]}>
               <ImageBox width="100%" height="700px" bg="#c4c4c4" />
             </Box>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <Box className={styles["cta-content"]}>
               <Typography variant="h2" component="h2" mb={2}>
                 Lorem ipsum dolor sit consectetur

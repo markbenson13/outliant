@@ -61,7 +61,7 @@ const Products = () => {
           />
         );
       },
-      flex: 1,
+      flex: 2,
       headerAlign: "center",
       align: "center",
     },
@@ -125,11 +125,10 @@ const Products = () => {
       <Header />
       <Container
         maxWidth="lg"
-        disableGutters
-        sx={{ paddingTop: "6rem", paddingBottom: "15rem" }}
+        sx={{ paddingTop: "6rem", paddingBottom: { sm: "5rem", md: "15rem" } }}
       >
         <Grid container direction="row" spacing={6}>
-          <Grid container item xs={6} mb={5}>
+          <Grid container item md={6} mb={5}>
             <Box className={styles["search-header"]}>
               <Typography variant="h3" component="h1" mr={3}>
                 Products
@@ -145,7 +144,7 @@ const Products = () => {
             </Box>
           </Grid>
           <Grid container item spacing={6}>
-            <Grid item xs={6}>
+            <Grid item md={6}>
               <Box className={styles["product-listings"]}>
                 <DataGrid
                   className={styles["product-table"]}
@@ -170,7 +169,7 @@ const Products = () => {
                 />
               </Box>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item md={6}>
               <Box className={styles["search-form"]}>
                 <Typography variant="h3" component="h3" mb={3}>
                   {edit ? "Update" : "Add"} product

@@ -9,7 +9,7 @@ const Banner = () => {
   return (
     <Container className={styles["banner-wrapper"]} maxWidth="lg">
       <Grid container spacing={4}>
-        <Grid item xs={6} className={styles["banner-content"]}>
+        <Grid item md={6} className={styles["banner-content"]}>
           <Typography variant="h1" component="h1">
             Lorem ipsum dolor sit amet consectetur
           </Typography>
@@ -26,7 +26,7 @@ const Banner = () => {
             </Button>
           </Box>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <Box className={styles["image-container"]}>
             <BoxImage
               width="500px"

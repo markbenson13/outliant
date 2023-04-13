@@ -13,10 +13,12 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import Link from "next/link";
 import styles from "../styles/Header.module.css";
+import { useRouter } from "next/router";
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const router = useRouter();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -34,10 +36,11 @@ const Header = () => {
   };
 
   return (
-    <AppBar className={styles["header-wrapper"]} position="static">
+    <AppBar className={styles["header-wrapper"]} position="fixed">
       <Container maxWidth="xl">
         <Toolbar className={styles["header-container"]} disableGutters>
           <Typography
+            className={styles["logo"]}
             variant="h4"
             noWrap
             component="a"
@@ -63,7 +66,7 @@ const Header = () => {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              <MenuIcon />
+              <MenuIcon color="primary" />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -83,10 +86,46 @@ const Header = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              <Link href="/">Home</Link>
-              <Link href="/about">About</Link>
-              <Link href="/services">Services</Link>
-              <Link href="/products">Products</Link>
+              <MenuItem>
+                <Link href="/" legacyBehavior>
+                  <a className={router.pathname == "/" ? styles["active"] : ""}>
+                    Home
+                  </a>
+                </Link>
+              </MenuItem>
+              <MenuItem>
+                <Link href="/about" legacyBehavior>
+                  <a
+                    className={
+                      router.pathname == "/about" ? styles["active"] : ""
+                    }
+                  >
+                    About
+                  </a>
+                </Link>
+              </MenuItem>
+              <MenuItem>
+                <Link href="/services" legacyBehavior>
+                  <a
+                    className={
+                      router.pathname == "/services" ? styles["active"] : ""
+                    }
+                  >
+                    Services
+                  </a>
+                </Link>
+              </MenuItem>
+              <MenuItem>
+                <Link href="/products" legacyBehavior>
+                  <a
+                    className={
+                      router.pathname == "/products" ? styles["active"] : ""
+                    }
+                  >
+                    Products
+                  </a>
+                </Link>
+              </MenuItem>
             </Menu>
           </Box>
           <Typography
@@ -96,26 +135,61 @@ const Header = () => {
             component="a"
             href=""
             sx={{
-              mr: 2,
+              mr: 0,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
               fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
+              color: "black",
               textDecoration: "none",
             }}
           >
-            LOGO
+            Logo
           </Typography>
           <Box
             className={styles["main-navigation"]}
             sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
           >
-            <Link href="/">Home</Link>
-            <Link href="/about">About</Link>
-            <Link href="/services">Services</Link>
-            <Link href="/products">Products</Link>
+            <MenuItem>
+              <Link href="/" legacyBehavior>
+                <a className={router.pathname == "/" ? styles["active"] : ""}>
+                  Home
+                </a>
+              </Link>
+            </MenuItem>
+            <MenuItem>
+              <Link href="/about" legacyBehavior>
+                <a
+                  className={
+                    router.pathname == "/about" ? styles["active"] : ""
+                  }
+                >
+                  About
+                </a>
+              </Link>
+            </MenuItem>
+            <MenuItem>
+              <Link href="/services" legacyBehavior>
+                <a
+                  className={
+                    router.pathname == "/services" ? styles["active"] : ""
+                  }
+                >
+                  Services
+                </a>
+              </Link>
+            </MenuItem>
+            <MenuItem>
+              <Link href="/products" legacyBehavior>
+                <a
+                  className={
+                    router.pathname == "/products" ? styles["active"] : ""
+                  }
+                >
+                  Products
+                </a>
+              </Link>
+            </MenuItem>
           </Box>
 
           <Box>

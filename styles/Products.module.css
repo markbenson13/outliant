@@ -14,3 +14,18 @@
 .product-table {
   position: relative;
 }
+
+@media only screen and (max-width: 900px) {
+  .search-header {
+    flex-flow: column wrap;
+    align-items: flex-start;
+  }
+  .search-header h1 {
+    margin-bottom: 2rem;
+  }
+  .search-form {
+    background-color: #ececec;
+    padding: 2rem;
+    text-align: center;
+  }
+}

@@ -1,5 +1,6 @@
 .banner-wrapper {
-  padding: 8rem 0;
+  padding-top: 15rem;
+  padding-bottom: 8rem;
 }
 
 .banner-content h1 {
@@ -24,4 +25,11 @@
   position: absolute;
   top: -70px;
   right: 30px;
+}
+
+@media only screen and (max-width: 900px) {
+  .image-container {
+    width: 100%;
+    margin-top: 8rem;
+  }
 }
