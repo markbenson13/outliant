@@ -31,13 +31,6 @@ const Products = () => {
 
   const columns = [
     {
-      field: "id",
-      headerName: "ID",
-      flex: 1,
-      headerAlign: "center",
-      align: "center",
-    },
-    {
       field: "product",
       headerName: "Name",
       flex: 1,
